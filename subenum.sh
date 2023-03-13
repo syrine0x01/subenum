@@ -2,11 +2,34 @@
 
 # requirements: subfinder, amass, assetfinder, jq, anew, altdns, httpx
 
-# command: 'bash subenum.sh [root domains list file]'
- 
+# command: 'bash subenum.sh [root domains list file] [dns list] [resolver list]'
+
+help(){
+    echo ""
+    echo "COMMAND: bash subenum.sh [root domains list file] [dns list] [resolver list]"
+    echo ""
+    echo "if you don't specify [dns list] , [resolver list] , then subenum will use default list"
+    echo ""
+}
+
 domain_file=$1
-wordlist="./dns.txt"
-resolvers="./resolvers.txt"
+if [[ $domain_file == "" ]]
+then
+    help
+    exit
+fi
+
+dnslist=$2
+if [[ $dnslist == "" ]]
+then
+    dnslist="dns.txt"
+fi
+
+resolvers=$3
+if [[ $resolvers == "" ]]
+then
+    dnslist="resolvers.txt"
+fi
 
 domain_enum(){
     rm -rf subdomains.txt
@@ -38,7 +61,7 @@ resolving_domains(){
     echo ""
     echo "[+] resolving domains..."
     echo ""
-    altdns -i $domain_file -w $wordlist -d $resolvers -o altdns.txt
+    altdns -i $domain_file -w $dnslist -d $resolvers -o altdns.txt
     cat altdns.txt subdomains.txt | grep -v "*" | anew subdomains.txt
     rm -rf altdns.txt
     echo ""
