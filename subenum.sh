@@ -1,12 +1,10 @@
 #!/bin/bash
 
-# requirements: subfinder, amass, assetfinder, jq, anew, httpx
-
-# command: 'bash subenum.sh [root domains list file]'
-
 help(){
     echo ""
     echo "COMMAND: bash subenum.sh [file-containing-root-domains]"
+    echo ""
+    echo "REQUIREMENTS: subfinder, amass, assetfinder, jq, anew, httpx"
     echo ""
 }
 
@@ -39,6 +37,10 @@ domain_enum(){
         json=$(curl -s https://crt.sh/\?q\=$url\&output\=json)
         echo $json | jq -r '.[].common_name' | anew subdomains.txt
     done
+    cat subdomains.txt | grep -v "*" | tee subdomains.txt
+    echo ""
+    echo "total number of testing domains found: $(wc -l < subdomains.txt)"
+    echo ""
 }
 domain_enum
 
@@ -47,7 +49,7 @@ httpx_scan(){
     echo ""
     echo "[+] httpx running..."
     echo ""
-    cat subdomains.txt | httpx -sc -mc 200,302,403,404 -title -td -location | anew httpx_scan.txt
+    cat subdomains.txt | httpx -silent -sc -mc 200,302,403,404 -title -td -location | anew httpx_scan.txt
     echo ""
     echo "total number of testing domains found: $(wc -l < httpx_scan.txt)"
     echo ""
