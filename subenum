@@ -4,8 +4,6 @@ help(){
     echo ""
     echo "COMMAND: bash subenum.sh [file-containing-root-domains]"
     echo ""
-    echo "REQUIREMENTS: subfinder, amass, assetfinder, jq, anew, httpx"
-    echo ""
 }
 
 domain_file=$1
