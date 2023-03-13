@@ -5,8 +5,8 @@
 # bash subenum.sh [root domains list file] [wordlist of DNS]
  
 domain_file=$1
-wordlist=$2
-resolvers="~/wordlists/resolvers.txt"
+wordlist="./dns.txt"
+resolvers="./resolvers.txt"
 
 domain_enum(){
     rm -rf subdomains.txt
