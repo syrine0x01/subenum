@@ -25,4 +25,6 @@ bash subenum
 ```
 sudo chmod +x subenum
 sudo mv subenum /usr/local/bin/
+cd ..
+rm -rf subenum
 ```
