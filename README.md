@@ -11,5 +11,15 @@ my custom subdomain enumeration tool
 - altdns
 - httpx
 
-### Command
-`bash subenum.sh [root domains list file]`
+## Command
+`bash subenum.sh [file-containing-root-domains]`
+
+## Install
+```
+git clone https://github.com/syrine0x01/subenum.git
+cd subenum
+bash subenum
+```
+
+## Ease Task
+`sudo mv subenum /usr/local/bin/`
