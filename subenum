@@ -26,7 +26,7 @@ domain_enum(){
     echo ""
     echo "[+] amass running..."
     echo ""
-    amass enum -passive -df $domain_file | anew subdomains.txt
+    amass enum -silent -passive -df $domain_file | anew subdomains.txt
     echo ""
     echo "[+] crt.sh running..."
     echo ""
