@@ -2,7 +2,7 @@
 
 # requirements: subfinder, amass, assetfinder, jq, anew, altdns, httpx
 
-# bash subenum.sh [root domains list file] [wordlist of DNS]
+# command: 'bash subenum.sh [root domains list file]'
  
 domain_file=$1
 wordlist="./dns.txt"
