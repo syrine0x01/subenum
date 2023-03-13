@@ -22,4 +22,7 @@ bash subenum
 ```
 
 ## Ease Task
-`sudo mv subenum /usr/local/bin/`
+```
+sudo chmod +x subenum
+sudo mv subenum /usr/local/bin/
+```
