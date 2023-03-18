@@ -8,7 +8,6 @@ my custom subdomain enumeration tool
 - assetfinder
 - jq
 - anew
-- altdns
 - httpx
 
 ## Command
