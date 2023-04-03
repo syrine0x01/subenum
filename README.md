@@ -11,7 +11,7 @@ my custom subdomain enumeration tool
 - httpx
 
 ## Command
-`bash subenum.sh [file-containing-root-domains]`
+`subenum [file-containing-root-domains]`
 
 ## Install
 ```
