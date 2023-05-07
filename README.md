@@ -21,7 +21,9 @@ go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
 ```
 
 ## Setting Up Commands
-`sudo cp ~/go/bin/* /usr/local/bin/`
+```
+sudo cp ~/go/bin/* /usr/local/bin/
+```
 
 ## Command
 `subenum [file-containing-root-domains]`
