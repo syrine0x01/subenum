@@ -12,12 +12,14 @@ my custom subdomain enumeration tool
 
 ## Installing Pre-Requirements
 ```
+sudo apt install golang-go -y
 go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 go install -v github.com/owasp-amass/amass/v3/...@master
 go install -v github.com/tomnomnom/assetfinder@latest
 sudo apt install jq -y
 go install -v github.com/tomnomnom/anew@latest
 go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
+sudo cp ~/go/bin/* /usr/local/bin/
 ```
 
 ## Setting Up Commands
