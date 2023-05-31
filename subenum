@@ -47,7 +47,7 @@ httpx_scan(){
     echo ""
     echo "[+] httpx running..."
     echo ""
-    cat subdomains.txt | httpx -silent -sc -mc 200,302,403,404 -title -td -location | anew httpx_scan.txt
+    cat subdomains.txt | httpx -title -wc -sc -cl -ct -web-server -asn -p 8000,8080,8443,443,80,8008,3000,5000,9090,7070,9200,15672,9000 -threads 75 -location | anew httpx_scan.txt
     echo ""
     echo "total number of testing domains found: $(wc -l < httpx_scan.txt)"
     echo ""
